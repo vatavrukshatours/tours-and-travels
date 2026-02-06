@@ -15,7 +15,7 @@ document.querySelectorAll('.book-now').forEach(button => {
         const tourName = this.getAttribute('data-tour');
         
         // Your WhatsApp number (Format: CountryCode + Number)
-        const phoneNumber = "918530940208"; 
+        const phoneNumber = "918421655251"; 
         
         // Construct the message
         const message = `${tourName} inquiry`;
