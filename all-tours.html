@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tours | Vatavruksha Travels</title>
+    <link rel="stylesheet" href="./../styles/style.css">
+    <link rel="stylesheet" href="./../styles/all-tours.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <img src="./assets/logo_vat.png" alt="Logo" class="logo">
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="#" class="nav-link">About</a></li>
+            <li><a href="#" class="nav-link">Services</a></li>
+        </ul>
+        <div class="nav-cta">Book a Tour</div>
+    </nav>
+
+    <main class="tours-container">
+        <header class="tours-header">
+            <h1 class="tours-title">ALL TOURS</h1>
+            <div class="header-banner">
+                <img src="./assets/banner.jpeg" alt="Scenic Destination">
+            </div>
+        </header>
+
+        <section class="filter-section">
+            <div class="filter-tabs">
+                <button class="tab active" data-filter="all">All Tours</button>
+                <button class="tab" data-filter="pilgrimage">Pilgrimage Tours</button>
+                <button class="tab" data-filter="family">Family Packages</button>
+                <button class="tab" data-filter="short">Short Trips</button>
+            </div>
+        </section>
+
+        <section class="tours-grid" id="tours-grid">
+            
+            <div class="tour-card" data-category="pilgrimage">
+                <div class="image-container">
+                    <img src="./assets/ujjain.jpeg" alt="Ujjain">
+                    <span class="badge">Bestseller</span>
+                </div>
+                <div class="tour-content">
+                    <p class="tour-duration">🕒 3-4 Days</p>
+                    <h3 class="tour-name">Ujjain & Omkareshwar</h3>
+                    <p class="tour-desc">Experience the Mahakal Corridor and spiritual evening aartis.</p>
+                    <div class="tour-footer">
+                        <button class="btn-secondary">More Info</button>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card" data-category="pilgrimage">
+                <div class="image-container">
+                    <img src="./assets/chardham.jpeg" alt="Char Dham">
+                </div>
+                <div class="tour-content">
+                    <p class="tour-duration">🕒 12 Days</p>
+                    <h3 class="tour-name">Himalayan Char Dham</h3>
+                    <p class="tour-desc">A complete spiritual journey through Yamunotri, Gangotri, Kedarnath.</p>
+                    <div class="tour-footer">
+                        <button class="btn-secondary">More Info</button>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card" data-category="family">
+                <div class="image-container">
+                    <img src="./assets/ujjain.jpeg" alt="Konkan">
+                </div>
+                <div class="tour-content">
+                    <p class="tour-duration">🕒 5 Days</p>
+                    <h3 class="tour-name">Konkan Coastal Escape</h3>
+                    <p class="tour-desc">Perfect family getaway with pristine beaches and authentic Malvani food.</p>
+                    <div class="tour-footer">
+                        <button class="btn-secondary">More Info</button>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card" data-category="short">
+                <div class="image-container">
+                    <img src="./assets/chardham.jpeg" alt="Akkalkot">
+                </div>
+                <div class="tour-content">
+                    <p class="tour-duration">🕒 2 Days</p>
+                    <h3 class="tour-name">Akkalkot Darshan</h3>
+                    <p class="tour-desc">Quick spiritual weekend trip to Swami Samarth Maharaj temple.</p>
+                    <div class="tour-footer">
+                        <button class="btn-secondary">More Info</button>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card" data-category="family">
+                <div class="image-container">
+                    <img src="./assets/ujjain.jpeg" alt="Mahabaleshwar">
+                </div>
+                <div class="tour-content">
+                    <p class="tour-duration">🕒 3 Days</p>
+                    <h3 class="tour-name">Mahabaleshwar Retreat</h3>
+                    <p class="tour-desc">Relaxing family package covering Venna Lake and various points.</p>
+                    <div class="tour-footer">
+                        <button class="btn-secondary">More Info</button>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card" data-category="short">
+                <div class="image-container">
+                    <img src="./assets/chardham.jpeg" alt="Pune">
+                </div>
+                <div class="tour-content">
+                    <p class="tour-duration">🕒 1 Day</p>
+                    <h3 class="tour-name">Pune Heritage Tour</h3>
+                    <p class="tour-desc">A guided city tour exploring Shaniwar Wada and Dagdusheth Halwai.</p>
+                    <div class="tour-footer">
+                        <button class="btn-secondary">More Info</button>
+                        <button class="btn-primary">Book</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        const filterButtons = document.querySelectorAll('.tab');
+        const tourCards = document.querySelectorAll('.tour-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Toggle active button UI
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                tourCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
