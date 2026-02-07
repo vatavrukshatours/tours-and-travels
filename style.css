@@ -60,6 +60,7 @@ nav .nav-links {
     gap: 3rem;
 }
 
+
 nav .nav-link {
     border-bottom: 3px solid transparent;
     list-style: none;
@@ -74,6 +75,15 @@ nav .nav-link:hover {
     transition: 200ms ease-in-out;
 }
 
+.nav-link a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-decoration: none; 
+    display: inline-block; 
+    width: 100%;
+}
 nav .nav-cta {
     padding: 0.5rem 1rem;
     border-radius: 12rem;
@@ -252,7 +262,7 @@ nav .nav-cta {
 .card-description { font-size: 0.95rem; color: #555; line-height: 1.6; margin-bottom: 1.5rem; }
 
 .card-cta {
-    margin-top: auto; /* Pushes buttons to the very bottom of the content area */
+    margin-top: auto; 
     display: flex;
     gap: 1rem;
 }
@@ -275,12 +285,91 @@ nav .nav-cta {
 
 
 
+.vehicle-section {
+    width: 100%;
+    padding: 6rem var(--side-padding);
+    background-color: var(--background-section);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.vehicle-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+}
+
+.vehicle-img-box {
+    background-color: #f4f1ea; 
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    height: 250px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vehicle-img-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.capacity-text {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-dark-extra);
+    margin-bottom: 1.5rem;
+}
+
+.book-transfer-btn {
+    width: 100%;
+    background-color: var(--color-dark);
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.book-transfer-btn:hover {
+    background-color: var(--color-dark-extra);
+}
+
+@media (max-width: 768px) {
+    .vehicle-section {
+        padding: 4rem 1.5rem;
+    }
+}
 
 
 
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~``` */
-/* --- Filtering Animation --- */
+
+
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -292,7 +381,6 @@ nav .nav-cta {
     }
 }
 
-/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .populer-destination {
         padding: 4rem 1.5rem;
@@ -464,7 +552,6 @@ nav .nav-cta {
 }
 
 
-/* Footer */
 
 .main-footer {
     background-color: var(--color-dark-extra);
